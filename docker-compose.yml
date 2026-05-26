@@ -1,20 +1,17 @@
-# docker-compose.yml
-version: '3.8'
+version: "3.9"
 
 services:
-  seo-mcp-server:
+  dispensary-mcp:
     build: .
+    container_name: dispensary-mcp
+    restart: unless-stopped
     ports:
       - "8080:8080"
     environment:
       - PORT=8080
-      - PYTHONUNBUFFERED=1
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/mcp || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-    volumes:
-      - ./logs:/app/logs
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - PEK_SIMILARITY_THRESHOLD=${PEK_SIMILARITY_THRESHOLD:-0.92}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    env_file:
+      - .env
