@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """
-Remote MCP Server - Professional SEO Checker
-
-This is a remote MCP server for comprehensive SEO analysis that can be deployed 
-to Hostinger or other hosting platforms. This implementation provides professional-grade
-SEO analysis capabilities for websites.
+Remote MCP Server - Remote Cannabis Scraper
+This is a remote MCP server for WNY Dispensaries
 
 DEPLOYMENT WORKFLOW:
 1. Deploy this server to Hostinger using your hosting account
@@ -18,22 +15,12 @@ DEPLOYMENT WORKFLOW:
 Example MCP client configuration:
 {
   "mcpServers": {
-    "seo-checker": {
+    "cannabis-scraper": {
       "url": "https://srv563806.hstgr.cloud/mcp",
-      "description": "Professional SEO analysis and optimization recommendations"
+      "description": "Dispensary menu data scraped"
     }
   }
 }
-
-This remote MCP server provides comprehensive SEO analysis including:
-- Title tags, meta descriptions, headers structure analysis
-- Image optimization and alt tags checking
-- Page speed and technical SEO evaluation
-- Content analysis and keyword density
-- Social media tags (Open Graph, Twitter Cards)
-- Schema markup detection
-- Mobile-friendliness indicators
-- Performance scoring and actionable recommendations
 """
 
 import asyncio
