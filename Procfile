@@ -1,1 +1,1 @@
-web: python remote-cannabis-scrapers.py
+web: python remote-dispensary-scraper.py
