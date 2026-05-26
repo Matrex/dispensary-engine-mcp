@@ -19,7 +19,7 @@ dispensary-menu-mcp/
     │   ├── aiq.py
     │   ├── blaze.py
     │   ├── weedmaps.py
-    │   └── iheartjane.py
+    │   └── jane.py
     │   ├── kushmart.py
     │   ├── goodlife.py
     ├── pek/
