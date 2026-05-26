@@ -1,4 +1,40 @@
 
+dispensary-menu-mcp/
+├── Dockerfile
+├── docker-compose.yml
+├── Procfile
+├── requirements.txt
+├── README.md
+├── .env.example
+├── remote-dispensary-scraper.py     # FastMCP remote entrypoint (mirrors remote-seo-checker.py)
+├── local-dispensary-scraper.py      # FastMCP local dev entrypoint (mirrors local-seo-checker.py)
+└── scraper/
+    ├── __init__.py
+    ├── runner.py                    # orchestrates: scrape → normalize → upsert
+    ├── sources/
+    │   ├── __init__.py
+    │   ├── dutchie.py
+    │   ├── carrot.py
+    │   ├── proteus420.py
+    │   ├── aiq.py
+    │   ├── blaze.py
+    │   ├── weedmaps.py
+    │   └── iheartjane.py
+    │   ├── kushmart.py
+    │   ├── goodlife.py
+    ├── pek/
+    │   ├── __init__.py
+    │   ├── filter.py                # PEK filter (Product Equivalence Key)
+    │   ├── normalize.py             # title/brand/strain/size normalizer
+    │   └── tokens.py                # stopwords, unit regexes, strain aliases
+    └── db/
+        ├── __init__.py
+        └── supabase_client.py       # upsert by pek_hash
+
+
+
+
+
 Deploy on your Hostinger Ubuntu VPS
 ssh root@your-vps-ip
 git clone https://github.com/<you>/dispensary-menu-mcp.git
