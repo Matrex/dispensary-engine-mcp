@@ -1,1 +1,1 @@
-web: python dispensary-engine.py
+web: python remote-cannabis-scrapers.py
