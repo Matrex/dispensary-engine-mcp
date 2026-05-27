@@ -1,1 +1,1 @@
-web: python remote-dispensary-scraper.py
+web: uvicorn remote_dispensary_scraper:app --host 0.0.0.0 --port ${PORT:-8080}

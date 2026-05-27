@@ -12,10 +12,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Playwright (for JS-rendered dispensary menus). Remove if you only need httpx.
+# Playwright chromium for JS-rendered menus
 RUN python -m playwright install --with-deps chromium
 
 COPY . .
 
 EXPOSE 8080
-CMD ["python", "remote-dispensary-scraper.py"]
+CMD ["uvicorn", "remote_dispensary_scraper:app", "--host", "0.0.0.0", "--port", "8080"]
